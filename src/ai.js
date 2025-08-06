@@ -6,7 +6,6 @@ You are an assistant that receives a list of items and then suggests a craft ide
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY, // Set this in your environment
-  dangerouslyAllowBrowser: true,
 });
 
 export async function getCraftIdeaFromClaude(itemsArr) {
