@@ -8,7 +8,7 @@ const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY, // Set this in your environment
 });
 
-export async function getCraftIdeaFromClaude(itemsArr) {
+export async function getResponseFromClaude(itemsArr) {
   const itemsString = itemsArr.join(", ");
 
   try {
