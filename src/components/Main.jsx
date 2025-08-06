@@ -12,6 +12,10 @@ export default function Main({ setLoading }) {
     const responseMarkdown = await getResponseFromClaude(items);
     setResponse(responseMarkdown);
     setLoading(false);
+    const element = document.querySelector(".claude-response");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   }
 
   function addItem(formData) {
