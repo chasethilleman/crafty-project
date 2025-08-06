@@ -5,10 +5,8 @@ export default function ItemsList(props) {
 
   return (
     <>
-      <div className="items-list-container">
-        <h2>Your crafty items</h2>
-        <ul className="items-list">{itemsListItems}</ul>
-      </div>
+      <h2>Your crafty items</h2>
+      <ul className="items-list">{itemsListItems}</ul>
       {props.items.length > 3 && (
         <div className="ready-card">
           <div>

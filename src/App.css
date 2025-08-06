@@ -35,7 +35,7 @@ form button {
 
 .ready-card {
   background-color: #282c34;
-  padding: 1rem;
+  padding: 1rem 2rem;
   border-radius: 8px;
   margin-top: 2rem;
   justify-content: space-between;
@@ -55,8 +55,4 @@ input {
   border: 1px solid #cccccc;
   padding: 0.25rem 0.75rem;
   min-width: 300px;
-}
-
-.items-list-container {
-  padding: 0rem 1rem;
 }
