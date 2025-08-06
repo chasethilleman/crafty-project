@@ -56,3 +56,32 @@ input {
   padding: 0.25rem 0.75rem;
   min-width: 300px;
 }
+
+.spinner {
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  border: 5px solid #f3f3f3; /* Light gray border for the main circle */
+  border-top: 5px solid #3498db; /* Blue border for the spinning part */
+  border-radius: 50%; /* Makes the div a circle */
+  animation: spin 1s linear infinite; /* Applies the spin animation */
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); /* Start at 0 degrees */
+  }
+  100% {
+    transform: rotate(360deg); /* Rotate to 360 degrees */
+  }
+}

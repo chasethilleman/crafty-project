@@ -1,12 +1,19 @@
+import { useState } from "react";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import "./App.css";
 
 function App() {
+  const [loading, setLoading] = useState(false);
   return (
     <>
+      {loading && (
+        <div className="spinner-container">
+          <div className="spinner"></div>
+        </div>
+      )}
       <Header />
-      <Main />
+      <Main loading={loading} setLoading={setLoading} />
     </>
   );
 }

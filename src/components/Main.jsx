@@ -3,13 +3,15 @@ import ItemsList from "./ItemsList";
 import ClaudeResponse from "./ClaudeResponse";
 import { getResponseFromClaude } from "../ai";
 
-export default function Main() {
+export default function Main({ setLoading }) {
   const [items, setItems] = useState([]);
   const [response, setResponse] = useState("");
 
   async function getCraft() {
+    setLoading(true);
     const responseMarkdown = await getResponseFromClaude(items);
     setResponse(responseMarkdown);
+    setLoading(false);
   }
 
   function addItem(formData) {
