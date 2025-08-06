@@ -4,7 +4,7 @@
 }
 
 header {
-  background-color: #282c34;
+  background-color: #dcad9d;
   padding: 20px;
   color: white;
   text-align: center;
@@ -34,7 +34,7 @@ form button {
 }
 
 .ready-card {
-  background-color: #282c34;
+  background-color: #dcad9d;
   padding: 1rem 2rem;
   border-radius: 8px;
   margin-top: 2rem;
@@ -58,12 +58,31 @@ input {
 }
 
 .spinner {
-  width: 50px; /* Adjust size as needed */
-  height: 50px; /* Adjust size as needed */
-  border: 5px solid #f3f3f3; /* Light gray border for the main circle */
-  border-top: 5px solid #3498db; /* Blue border for the spinning part */
-  border-radius: 50%; /* Makes the div a circle */
-  animation: spin 1s linear infinite; /* Applies the spin animation */
+  box-sizing: border-box;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+}
+.spinner:after,
+.spinner:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  border-radius: 50%;
+  background: #d55038;
+  animation: spin 1s linear infinite;
+  transform-origin: 0px 100%;
+}
+.spinner:before {
+  transform-origin: 0 50%;
+  background: #dcad9d;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .spinner-container {
@@ -75,6 +94,11 @@ input {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
+  z-index: 100;
+}
+
+.header-logo {
+  height: 100px;
 }
 
 @keyframes spin {

@@ -1,7 +1,9 @@
+import craftyLogo from "../assets/crafty.png";
+
 export default function Header() {
   return (
     <header>
-      <h1>Crafty Project</h1>
+      <img src={craftyLogo} className="header-logo" alt="Crafty Project Logo" />
     </header>
   );
 }

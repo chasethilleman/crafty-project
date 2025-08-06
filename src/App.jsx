@@ -9,7 +9,7 @@ function App() {
     <>
       {loading && (
         <div className="spinner-container">
-          <div className="spinner"></div>
+          <span className="spinner"></span>
         </div>
       )}
       <Header />
