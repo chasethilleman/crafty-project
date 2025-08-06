@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ItemsList from "./ItemsList";
+import ClaudeResponse from "./ClaudeResponse";
 import { getResponseFromClaude } from "../ai";
 
 export default function Main() {
