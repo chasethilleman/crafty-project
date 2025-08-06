@@ -19,15 +19,16 @@ export default function Main() {
 
   return (
     <>
-      <form action={addItem}>
-        <label>
-          Item:
-          <input type="text" name="item" />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-      {items.length > 0 && <ItemsList items={items} getCraft={getCraft} />}
-      {response && <ClaudeResponse response={response} />}
+      <div className="main-body">
+        <form action={addItem}>
+          <label>
+            <input type="text" placeholder="e.g. yarn" name="item" />
+          </label>
+          <button type="submit">Add Item</button>
+        </form>
+        {items.length > 0 && <ItemsList items={items} getCraft={getCraft} />}
+        {response && <ClaudeResponse response={response} />}
+      </div>
     </>
   );
 }
