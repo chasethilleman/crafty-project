@@ -28,7 +28,7 @@ form button {
 }
 
 .main-body {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -37,10 +37,12 @@ form button {
   background-color: #282c34;
   padding: 1rem;
   border-radius: 8px;
-  margin-top: 1rem;
-  justify-content: space-evenly;
+  margin-top: 2rem;
+  justify-content: space-between;
   display: flex;
   color: white;
+  flex-direction: row;
+  align-items: center;
 }
 
 .ready-card button {
@@ -52,4 +54,9 @@ input {
   border-radius: 8px;
   border: 1px solid #cccccc;
   padding: 0.25rem 0.75rem;
+  min-width: 300px;
+}
+
+.items-list-container {
+  padding: 0rem 1rem;
 }
