@@ -6,6 +6,7 @@ import { getResponseFromClaude } from "../ai";
 export default function Main({ setLoading }) {
   const [items, setItems] = useState([]);
   const [response, setResponse] = useState("");
+  const [itemInput, setItemInput] = useState("");
 
   async function getCraft() {
     setLoading(true);
@@ -21,18 +22,37 @@ export default function Main({ setLoading }) {
   function addItem(formData) {
     const newItem = formData.get("item");
     setItems((prevItems) => [...prevItems, newItem]);
+    setItemInput(""); // Clear input after adding item
+  }
+
+  function deleteItem(index) {
+    setItems((prevItems) => prevItems.filter((_, i) => i !== index));
   }
 
   return (
     <>
       <div className="main-body">
-        <form action={addItem}>
-          <label>
-            <input type="text" placeholder="e.g. yarn" name="item" />
-          </label>
-          <button type="submit">Add Item</button>
-        </form>
-        {items.length > 0 && <ItemsList items={items} getCraft={getCraft} />}
+        <div className="input-card">
+          <h1>Welcome to Crafty!</h1>
+          <p>
+            Add your crafty items below, and get a creative idea from Claude!
+          </p>
+          <form action={addItem} onChange={(e) => setItemInput(e.target.value)}>
+            <label>
+              <input type="text" placeholder="e.g. yarn" name="item" />
+            </label>
+            <button type="submit" disabled={!itemInput}>
+              Add Item
+            </button>
+          </form>
+          {items.length > 0 && (
+            <ItemsList
+              items={items}
+              getCraft={getCraft}
+              deleteItem={deleteItem}
+            />
+          )}
+        </div>
         {response && <ClaudeResponse response={response} />}
       </div>
     </>
