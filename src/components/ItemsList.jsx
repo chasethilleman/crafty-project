@@ -30,7 +30,7 @@ export default function ItemsList(props) {
   return (
     <>
       <ul className="items-list">{itemsListItems}</ul>
-      {props.items.length > 3 && (
+      {props.items.length > 2 && (
         <div className="ready-card">
           <div>
             <h2>Ready to get crafty?</h2>

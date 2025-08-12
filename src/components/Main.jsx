@@ -37,13 +37,17 @@ export default function Main({ setLoading }) {
           <p>
             Add your crafty items below, and get a creative idea from Claude!
           </p>
-          <form action={addItem} onChange={(e) => setItemInput(e.target.value)}>
+          <form
+            action={addItem}
+            onChange={(e) => setItemInput(e.target.value)}
+            className="item-form"
+          >
             <label>
               <input type="text" placeholder="e.g. yarn" name="item" />
+              <button type="submit" disabled={!itemInput}>
+                Add Item
+              </button>
             </label>
-            <button type="submit" disabled={!itemInput}>
-              Add Item
-            </button>
           </form>
           {items.length > 0 && (
             <ItemsList
