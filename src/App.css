@@ -128,7 +128,6 @@ input {
   border-radius: 8px;
   border: 1px solid #cccccc;
   padding: 0.25rem 0.75rem;
-  min-width: 500px;
 }
 
 .spinner {
